@@ -30,16 +30,14 @@
   <!-- Desktop links -->
   <div class="nav-links">
     <a href="#hero">Beranda</a>
-    <a href="#games">Item Game</a>
+    <a href="#features">Fitur</a>
     <a href="#faq">FAQ</a>
     <a href="#contact">Kontak</a>
-    <button class="theme-btn" id="themeBtn" title="Toggle tema">🌙</button>
-    <a href="#contact" class="btn-nav">Sign In</a>
+    <button class="btn-nav-buy" onclick="openCatalog()">🛒 Beli Sekarang</button>
   </div>
 
   <!-- Mobile controls -->
   <div style="display:flex;align-items:center;gap:10px;">
-    <button class="theme-btn" id="themeBtnMobile" style="display:none" title="Toggle tema">🌙</button>
     <button class="nav-toggle" id="navToggle" aria-label="Buka menu">
       <span></span>
       <span></span>
@@ -51,10 +49,10 @@
 <!-- Mobile menu -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="#hero"    onclick="closeMobile()">Beranda</a>
-  <a href="#games"   onclick="closeMobile()">Item Game</a>
+  <a href="#features" onclick="closeMobile()">Fitur</a>
   <a href="#faq"     onclick="closeMobile()">FAQ</a>
   <a href="#contact" onclick="closeMobile()">Kontak</a>
-  <a href="#contact" onclick="closeMobile()" style="color:var(--accent);font-weight:800;">Sign In →</a>
+  <button onclick="closeMobile();openCatalog();" class="mobile-buy-btn">🛒 Beli Sekarang</button>
 </div>
 
 <!-- ─── HERO ────────────────────────────────────── -->
@@ -75,26 +73,18 @@
       Diamond, UC, joki rank, dan masih banyak lagi.
     </p>
     <div class="hero-cta">
-      <a href="#games"    class="btn-primary">🛒 Beli Sekarang</a>
+      <button class="btn-primary" onclick="openCatalog()">🛒 Beli Sekarang</button>
       <a href="#features" class="btn-outline">✨ Kenapa Komigame?</a>
     </div>
   </div>
 
-</div>
-
   <div class="hero-circle"></div>
 
   <!-- Hero Character -->
-  <img src="artist_hero.png"
-       alt="Hero Character"
-       class="hero-character">
+  <img src="artist_hero.png" alt="Hero Character" class="hero-character">
 
   <!-- Player -->
-  <img src="hero_player.png"
-       alt="Gaming Player"
-       class="hero-player">
-
-</div>
+  <img src="hero_player.png" alt="Gaming Player" class="hero-player">
 
   <div class="hero-stats">
     <div class="hero-stat-item">
@@ -159,6 +149,7 @@
     </div>
   </div>
 </section>
+
 <!-- ─── STATS ────────────────────────────────────── -->
 <section id="stats">
   <div class="stats-grid">
@@ -205,24 +196,11 @@
     <p class="section-sub">Kami mendukung berbagai metode pembayaran digital yang aman dan terpercaya.</p>
   </div>
   <div class="payment-grid reveal">
-
-    <div class="payment-item">
-        <img src="qris.png" alt="QRIS">
-    </div>
-
-    <div class="payment-item">
-        <img src="gopay.png" alt="GoPay">
-    </div>
-
-    <div class="payment-item">
-        <img src="dana.png" alt="DANA">
-    </div>
-
-    <div class="payment-item">
-        <img src="shopee.png" alt="ShopeePay">
-    </div>
-
-</div>
+    <div class="payment-item"><img src="qris.png" alt="QRIS"></div>
+    <div class="payment-item"><img src="gopay.png" alt="GoPay"></div>
+    <div class="payment-item"><img src="dana.png" alt="DANA"></div>
+    <div class="payment-item"><img src="shopee.png" alt="ShopeePay"></div>
+  </div>
 </section>
 
 <!-- ─── FAQ ──────────────────────────────────────── -->
@@ -249,27 +227,21 @@
       <p>Jika kamu mengalami kendala atau membutuhkan bantuan, jangan ragu untuk menghubungi tim customer service kami. Kami siap membantu!</p>
       <div class="contact-methods">
         <a href="https://wa.me/6281268972181" class="contact-method" target="_blank" rel="noopener">
-          <div class="contact-method-icon">
-            <img src="whatsapp.png" alt="WhatsApp">
-        </div>
+          <div class="contact-method-icon"><img src="whatsapp.png" alt="WhatsApp"></div>
           <div class="contact-method-info">
             <span class="cm-lbl">WhatsApp (Respon Cepat)</span>
             <span class="cm-val">+62 812-6897-2181</span>
           </div>
         </a>
         <a href="https://instagram.com/comi.goo.id" class="contact-method" target="_blank" rel="noopener">
-          <div class="contact-method-icon">
-            <img src="insta.png" alt="insta">
-        </div>
+          <div class="contact-method-icon"><img src="insta.png" alt="Instagram"></div>
           <div class="contact-method-info">
             <span class="cm-lbl">Instagram</span>
             <span class="cm-val">@comi.goo.id</span>
           </div>
         </a>
         <a href="mailto:comigoo.id@gmail.com" class="contact-method">
-          <div class="contact-method-icon">
-            <img src="email.png" alt="insta">
-        </div>
+          <div class="contact-method-icon"><img src="email.png" alt="Email"></div>
           <div class="contact-method-info">
             <span class="cm-lbl">Email</span>
             <span class="cm-val">comigoo.id@gmail.com</span>
@@ -328,11 +300,11 @@
     <div class="footer-col">
       <h4>Layanan</h4>
       <ul>
-        <li><a href="#games">Top Up Diamond</a></li>
-        <li><a href="#games">Top Up UC</a></li>
-        <li><a href="#games">Joki Rank</a></li>
-        <li><a href="#games">Push Rank</a></li>
-        <li><a href="#games">Akun Game</a></li>
+        <li><a href="#" onclick="openCatalog();return false;">Top Up Diamond</a></li>
+        <li><a href="#" onclick="openCatalog();return false;">Top Up UC</a></li>
+        <li><a href="#" onclick="openCatalog();return false;">Joki Rank</a></li>
+        <li><a href="#" onclick="openCatalog();return false;">Push Rank</a></li>
+        <li><a href="#" onclick="openCatalog();return false;">Akun Game</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -342,7 +314,6 @@
         <li><a href="#testimonials">Testimoni</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact">Kontak</a></li>
-        <li><a href="#">Blog</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -367,6 +338,109 @@
 
 <!-- ─── FLOAT WA BUTTON ──────────────────────────── -->
 <a href="https://wa.me/621268972181" class="wa-float" target="_blank" rel="noopener" title="Chat WhatsApp">💬</a>
+
+<!-- ═══════════════════════════════════════════════
+     GAME CATALOG MODAL
+════════════════════════════════════════════════ -->
+<div class="modal-overlay" id="catalogOverlay" onclick="closeCatalogIfOverlay(event)">
+  <div class="modal-box" id="catalogBox">
+
+    <!-- ── STEP 1: Game List ── -->
+    <div id="step-games" class="modal-step active">
+      <div class="modal-header">
+        <h2>🎮 Pilih Game</h2>
+        <button class="modal-close" onclick="closeCatalog()">✕</button>
+      </div>
+      <p class="modal-sub">Pilih game yang ingin kamu top up atau joki</p>
+
+      <!-- Filter tabs -->
+      <div class="cat-tabs">
+        <button class="cat-tab active" onclick="filterCat('all',this)">Semua</button>
+        <button class="cat-tab" onclick="filterCat('topup',this)">Top Up</button>
+        <button class="cat-tab" onclick="filterCat('joki',this)">Joki Rank</button>
+      </div>
+
+      <div class="games-modal-grid" id="gamesGrid"></div>
+    </div>
+
+    <!-- ── STEP 2: Item List ── -->
+    <div id="step-items" class="modal-step">
+      <div class="modal-header">
+        <button class="modal-back" onclick="goStep('games')">← Kembali</button>
+        <h2 id="itemStepTitle">Pilih Item</h2>
+        <button class="modal-close" onclick="closeCatalog()">✕</button>
+      </div>
+      <p class="modal-sub" id="itemStepSub"></p>
+      <div class="items-grid" id="itemsGrid"></div>
+    </div>
+
+    <!-- ── STEP 3: Transaction Form ── -->
+    <div id="step-transaction" class="modal-step">
+      <div class="modal-header">
+        <button class="modal-back" onclick="goStep('items')">← Kembali</button>
+        <h2>📋 Detail Pembelian</h2>
+        <button class="modal-close" onclick="closeCatalog()">✕</button>
+      </div>
+
+      <!-- Order summary card -->
+      <div class="order-summary" id="orderSummary"></div>
+
+      <!-- Form -->
+      <div class="tx-form">
+        <div class="form-group">
+          <label>User ID Game <span class="required">*</span></label>
+          <input type="text" id="txUserId" placeholder="Masukkan User ID kamu" required>
+        </div>
+        <div class="form-group" id="txServerGroup">
+          <label>Server / Zone ID</label>
+          <input type="text" id="txServerId" placeholder="Contoh: 12345 (Mobile Legends)">
+        </div>
+        <div class="form-group">
+          <label>Nomor WhatsApp <span class="required">*</span></label>
+          <input type="tel" id="txWA" placeholder="08xx-xxxx-xxxx" required>
+        </div>
+        <div class="form-group">
+          <label>Metode Pembayaran <span class="required">*</span></label>
+          <div class="payment-method-grid">
+            <label class="pm-option">
+              <input type="radio" name="payMethod" value="QRIS"> <span>QRIS</span>
+            </label>
+            <label class="pm-option">
+              <input type="radio" name="payMethod" value="GoPay"> <span>GoPay</span>
+            </label>
+            <label class="pm-option">
+              <input type="radio" name="payMethod" value="DANA"> <span>DANA</span>
+            </label>
+            <label class="pm-option">
+              <input type="radio" name="payMethod" value="ShopeePay"> <span>ShopeePay</span>
+            </label>
+          </div>
+        </div>
+        <button class="form-submit full-width" onclick="submitTransaction()">⚡ Bayar Sekarang</button>
+      </div>
+    </div>
+
+    <!-- ── STEP 4: Success ── -->
+    <div id="step-success" class="modal-step">
+      <div class="modal-header">
+        <h2>✅ Pesanan Diterima!</h2>
+        <button class="modal-close" onclick="closeCatalog()">✕</button>
+      </div>
+      <div class="success-body">
+        <div class="success-icon">🎉</div>
+        <h3>Transaksi Berhasil Dibuat!</h3>
+        <p id="successMsg"></p>
+        <div class="success-order-id" id="successOrderId"></div>
+        <p class="success-note">Tim kami akan memproses pesananmu dalam <strong>5–15 menit</strong>. Konfirmasi akan dikirimkan via WhatsApp.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:24px;">
+          <a href="https://wa.me/6281268972181" class="btn-primary" target="_blank" rel="noopener">💬 Konfirmasi WhatsApp</a>
+          <button class="btn-outline" onclick="closeCatalog()">Selesai</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>
