@@ -424,9 +424,13 @@ function renderOrderSummary() {
   `;
 }
 
+/* ── Nomor WhatsApp admin/CS tujuan pesanan ── */
+const ADMIN_WA_NUMBER = '6281268972181'; // format: kode negara tanpa "+" atau "0" di depan
+
 /* ── Submit transaction ── */
 function submitTransaction() {
   const userId = document.getElementById('txUserId').value.trim();
+  const serverId = document.getElementById('txServerId').value.trim();
   const wa = document.getElementById('txWA').value.trim();
   const method = document.querySelector('input[name="payMethod"]:checked');
 
@@ -435,12 +439,31 @@ function submitTransaction() {
   if (!method) { alert('Pilih metode pembayaran!'); return; }
 
   const orderId = 'KG-' + Date.now().toString(36).toUpperCase();
+  const total = 'Rp ' + selectedItem.price.toLocaleString('id-ID');
+
+  // ── Susun template pesan WhatsApp sesuai detail pesanan yang mereka pilih ──
+  let msg = `Halo Komigame, saya ingin melakukan pembayaran untuk pesanan berikut:\n\n`;
+  msg += `📋 *Order ID:* ${orderId}\n`;
+  msg += `🎮 *Game:* ${selectedGame.name}\n`;
+  msg += `📦 *Item:* ${selectedItem.name}\n`;
+  if (selectedItem.bonus) msg += `🎁 *Bonus:* ${selectedItem.bonus}\n`;
+  msg += `🆔 *User ID:* ${userId}\n`;
+  if (selectedGame.needsServer && serverId) msg += `🌐 *Server/Zone ID:* ${serverId}\n`;
+  msg += `📱 *No. WhatsApp:* ${wa}\n`;
+  msg += `💳 *Metode Pembayaran:* ${method.value}\n`;
+  msg += `💰 *Total:* ${total}\n\n`;
+  msg += `Mohon konfirmasi dan kirimkan instruksi pembayarannya. Terima kasih!`;
+
+  const waLink = `https://wa.me/${ADMIN_WA_NUMBER}?text=${encodeURIComponent(msg)}`;
 
   document.getElementById('successMsg').textContent =
     `${selectedGame.name} — ${selectedItem.name} akan segera dikirimkan ke akunmu.`;
   document.getElementById('successOrderId').textContent = `Order ID: ${orderId}`;
 
   goStep('success');
+
+  // ── Langsung pindahkan pembeli ke WhatsApp dengan template pesan pesanan ──
+  window.open(waLink, '_blank');
 }
 
 /* close on ESC */
