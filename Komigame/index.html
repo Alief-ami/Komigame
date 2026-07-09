@@ -13,7 +13,7 @@
   
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Komigame — Item Game & Joki Terpercaya</title>
+  <title>Komigame — Item Game Terpercaya</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -80,7 +80,7 @@
     </h1>
     <p class="hero-desc">
       Proses cepat, aman, dan terpercaya untuk semua gamer di Indonesia.
-      Diamond, UC, joki rank, dan masih banyak lagi.
+      Diamond, UC, Robux, dan masih banyak lagi.
     </p>
     <div class="hero-cta">
       <button class="btn-primary" onclick="openCatalog()">🛒 Beli Sekarang</button>
@@ -95,6 +95,21 @@
 
   <!-- Player -->
   <img src="hero_player.png" alt="Gaming Player" class="hero-player">
+
+  <div class="hero-stats">
+    <div class="hero-stat-item">
+      <span class="hero-stat-num" id="cnt1">0</span>
+      <span class="hero-stat-lbl">Transaksi Sukses</span>
+    </div>
+    <div class="hero-stat-item">
+      <span class="hero-stat-num" id="cnt2">0</span>
+      <span class="hero-stat-lbl">Pelanggan Puas</span>
+    </div>
+    <div class="hero-stat-item">
+      <span class="hero-stat-num" id="cnt3">0</span>
+      <span class="hero-stat-lbl">Game Tersedia</span>
+    </div>
+  </div>
 </section>
 
 <!-- ─── FEATURES ────────────────────────────────── -->
@@ -132,8 +147,8 @@
     </div>
     <div class="feature-card reveal reveal-delay-2">
       <div class="feature-icon">🏆</div>
-      <h3>Joki Profesional</h3>
-      <p>Tim joki berpengalaman dan berperingkat tinggi siap membantu kamu naik rank dengan cepat dan aman.</p>
+      <h3>Aneka Pilihan Game</h3>
+      <p>Dari Mobile Legends, PUBG, Free Fire, hingga Roblox — semua kebutuhan top up gamemu ada di sini.</p>
       <div class="card-glow"></div>
     </div>
     <div class="feature-card reveal reveal-delay-3">
@@ -267,9 +282,7 @@
           <option>Mobile Legends — Diamond</option>
           <option>PUBG Mobile — UC</option>
           <option>Free Fire — Diamond</option>
-          <option>Genshin Impact — Crystal</option>
-          <option>Valorant — VP</option>
-          <option>Joki Rank</option>
+          <option>Roblox — Robux</option>
           <option>Lainnya</option>
         </select>
       </div>
@@ -290,15 +303,14 @@
   <div class="footer-grid">
     <div>
       <span class="footer-brand-name">KOMIGAME</span>
-      <p class="footer-desc">Platform top up dan jasa joki game terpercaya di Indonesia. Harga terjangkau, proses cepat, dan layanan aman untuk semua gamer.</p>
+      <p class="footer-desc">Platform top up item game terpercaya di Indonesia. Harga terjangkau, proses cepat, dan layanan aman untuk semua gamer.</p>
     </div>
     <div class="footer-col">
       <h4>Layanan</h4>
       <ul>
         <li><a href="#" onclick="openCatalog();return false;">Top Up Diamond</a></li>
         <li><a href="#" onclick="openCatalog();return false;">Top Up UC</a></li>
-        <li><a href="#" onclick="openCatalog();return false;">Joki Rank</a></li>
-        <li><a href="#" onclick="openCatalog();return false;">Push Rank</a></li>
+        <li><a href="#" onclick="openCatalog();return false;">Top Up Robux</a></li>
         <li><a href="#" onclick="openCatalog();return false;">Akun Game</a></li>
       </ul>
     </div>
@@ -332,7 +344,7 @@
 </footer>
 
 <!-- ─── FLOAT WA BUTTON ──────────────────────────── -->
-<a href="https://wa.me/6282182385782" class="wa-float" target="_blank" rel="noopener" title="Chat WhatsApp">💬</a>
+<a href="https://wa.me/621268972181" class="wa-float" target="_blank" rel="noopener" title="Chat WhatsApp">💬</a>
 
 <!-- ═══════════════════════════════════════════════
      GAME CATALOG MODAL
@@ -346,13 +358,12 @@
         <h2>🎮 Pilih Game</h2>
         <button class="modal-close" onclick="closeCatalog()">✕</button>
       </div>
-      <p class="modal-sub">Pilih game yang ingin kamu top up atau joki</p>
+      <p class="modal-sub">Pilih game yang ingin kamu top up</p>
 
       <!-- Filter tabs -->
       <div class="cat-tabs">
         <button class="cat-tab active" onclick="filterCat('all',this)">Semua</button>
         <button class="cat-tab" onclick="filterCat('topup',this)">Top Up</button>
-        <button class="cat-tab" onclick="filterCat('joki',this)">Joki Rank</button>
       </div>
 
       <div class="games-modal-grid" id="gamesGrid"></div>
